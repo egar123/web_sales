@@ -1,0 +1,507 @@
+/* =============================================================================
+   Form standalone (tambah user / tambah produk)
+   ============================================================================= */
+
+.form-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-xl) var(--space-md);
+    background:
+        radial-gradient(ellipse 80% 60% at 50% -20%, rgba(59, 130, 246, 0.14), transparent),
+        var(--bg-page);
+}
+
+.premium-form {
+    width: 100%;
+    max-width: 440px;
+    padding: var(--space-xl);
+    border-radius: var(--radius-2xl);
+    background: linear-gradient(155deg, var(--bg-card-strong) 0%, var(--bg-elevated) 100%);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.premium-form:hover {
+    border-color: rgba(59, 130, 246, 0.2);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.premium-form h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.premium-form .btn-back {
+    align-self: flex-start;
+    margin-bottom: 0;
+}
+
+.premium-form input,
+.premium-form select {
+    width: 100%;
+    padding: 13px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-deep);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.premium-form input:focus,
+.premium-form select:focus {
+    border-color: rgba(59, 130, 246, 0.45);
+    box-shadow: var(--ring-focus);
+}
+
+.premium-form input[type="file"] {
+    padding: 10px;
+    font-size: 0.88rem;
+    border-style: dashed;
+}
+
+.premium-form button[type="submit"] {
+    margin-top: 6px;
+    padding: 14px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.premium-form button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(37, 99, 235, 0.4);
+}
+/* =============================================================================
+   FORM TARGET SALES
+   ============================================================================= */
+
+.target-wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.target-card{
+    width: 100%;
+    max-width: 460px;
+
+    padding: 32px;
+
+    border-radius: var(--radius-2xl);
+
+    background:
+        linear-gradient(
+            155deg,
+            var(--bg-card-strong) 0%,
+            var(--bg-elevated) 100%
+        );
+
+    border: 1px solid var(--border-subtle);
+
+    box-shadow:
+        var(--shadow-lg),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.target-card:hover{
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 24px 55px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.target-card h1{
+    margin: 0;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.target-card p{
+    margin-top: -4px;
+    text-align: center;
+    color: var(--text-soft);
+    font-size: 0.92rem;
+}
+
+.target-card input{
+    width: 100%;
+    padding: 14px 16px;
+
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+
+    background: var(--bg-deep);
+    color: var(--text);
+
+    font-size: 0.95rem;
+    font-family: inherit;
+
+    outline: none;
+    box-sizing: border-box;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.target-card input:focus{
+    border-color: rgba(59,130,246,0.45);
+    box-shadow: var(--ring-focus);
+}
+
+.target-card button{
+    margin-top: 8px;
+    padding: 14px;
+
+    border: none;
+    border-radius: var(--radius-md);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-strong)
+        );
+
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.target-card button:hover{
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(37,99,235,0.4);
+}
+
+.target-back{
+    width: fit-content;
+
+    padding: 10px 16px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-subtle);
+
+    color: var(--text);
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition:
+        background var(--transition),
+        transform var(--transition);
+}
+
+.target-back:hover{
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-2px);
+}
+
+@media(max-width: 480px){
+
+    .target-card{
+        padding: 24px;
+    }
+
+}
+/* =============================================================================
+   EDIT PRODUK PREMIUM
+   ============================================================================= */
+
+.edit-product-page{
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(circle at top, rgba(59,130,246,0.16), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(37,99,235,0.12), transparent 35%),
+        var(--bg-page);
+}
+
+/* =============================================================================
+   CARD
+   ============================================================================= */
+
+.edit-product-card{
+    width: 100%;
+    max-width: 480px;
+
+    padding: 34px;
+
+    border-radius: var(--radius-2xl);
+
+    background:
+        linear-gradient(
+            155deg,
+            var(--bg-card-strong) 0%,
+            var(--bg-elevated) 100%
+        );
+
+    border: 1px solid var(--border-subtle);
+
+    box-shadow:
+        var(--shadow-lg),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.edit-product-card:hover{
+    transform: translateY(-3px);
+
+    border-color: rgba(59,130,246,0.22);
+
+    box-shadow:
+        0 24px 56px rgba(0,0,0,0.48),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* =============================================================================
+   TITLE
+   ============================================================================= */
+
+.edit-product-card h1{
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+
+    color: var(--text);
+}
+
+/* =============================================================================
+   IMAGE
+   ============================================================================= */
+
+.edit-product-image{
+    width: 130px;
+    height: 130px;
+
+    margin: 0 auto;
+
+    border-radius: 20px;
+
+    object-fit: cover;
+
+    border: 1px solid var(--border-subtle);
+
+    box-shadow:
+        0 10px 24px rgba(0,0,0,0.3);
+}
+
+/* =============================================================================
+   INPUT
+   ============================================================================= */
+
+.edit-product-card input,
+.edit-product-card select{
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: var(--radius-md);
+
+    border: 1px solid var(--border-subtle);
+
+    background: var(--bg-deep);
+
+    color: var(--text);
+
+    font-size: 0.95rem;
+    font-family: inherit;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+.edit-product-card input:focus,
+.edit-product-card select:focus{
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow: var(--ring-focus);
+
+    background: rgba(15,23,42,0.96);
+}
+
+.edit-product-card input[type="file"]{
+    padding: 10px;
+
+    border-style: dashed;
+
+    cursor: pointer;
+}
+
+/* =============================================================================
+   BUTTON
+   ============================================================================= */
+
+.edit-product-card button{
+    margin-top: 8px;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: var(--radius-md);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-strong)
+        );
+
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.edit-product-card button:hover{
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(37,99,235,0.4);
+}
+
+.edit-product-card button:active{
+    transform: scale(0.98);
+}
+
+/* =============================================================================
+   BACK BUTTON
+   ============================================================================= */
+
+.edit-back{
+    width: fit-content;
+
+    padding: 10px 16px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid var(--border-subtle);
+
+    color: var(--text);
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition:
+        background var(--transition),
+        transform var(--transition);
+}
+
+.edit-back:hover{
+    background: rgba(255,255,255,0.08);
+
+    transform: translateY(-2px);
+}
+
+/* =============================================================================
+   RESPONSIVE
+   ============================================================================= */
+
+@media(max-width: 768px){
+
+    .edit-product-card{
+        padding: 28px;
+    }
+
+}
+
+@media(max-width: 480px){
+
+    .edit-product-page{
+        padding: 20px;
+    }
+
+    .edit-product-card{
+        padding: 22px;
+        border-radius: 24px;
+    }
+
+    .edit-product-card h1{
+        font-size: 1.45rem;
+    }
+
+    .edit-product-image{
+        width: 110px;
+        height: 110px;
+    }
+
+}

@@ -1,0 +1,164 @@
+/* =============================================================================
+   Halaman login (.page-login)
+   ============================================================================= */
+
+.page-login {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-md);
+    background:
+        radial-gradient(ellipse 90% 70% at 50% -30%, rgba(59, 130, 246, 0.22), transparent 55%),
+        radial-gradient(ellipse 50% 45% at 110% 90%, rgba(139, 92, 246, 0.16), transparent),
+        radial-gradient(ellipse 40% 40% at -10% 80%, rgba(34, 211, 238, 0.06), transparent),
+        linear-gradient(168deg, #070b14 0%, #0f172a 42%, #111827 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-login .login-bg-blur {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.page-login .login-bg-blur--1 {
+    width: 340px;
+    height: 340px;
+    background: #3b82f6;
+    top: -90px;
+    left: -70px;
+}
+
+.page-login .login-bg-blur--2 {
+    width: 300px;
+    height: 300px;
+    background: #7c3aed;
+    bottom: -110px;
+    right: -50px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 440px;
+    position: relative;
+    z-index: 1;
+}
+
+.login-box {
+    width: 100%;
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: var(--radius-2xl);
+    background: linear-gradient(165deg, rgba(30, 41, 59, 0.72) 0%, rgba(15, 23, 42, 0.55) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+        var(--shadow-lg),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    animation: loginIn 0.55s var(--ease) both;
+}
+
+@keyframes loginIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.login-box h1 {
+    margin: 0;
+    font-size: clamp(1.75rem, 4vw, 2.15rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #f8fafc;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .login-box h1 {
+        background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+.login-box > p {
+    margin: 0 0 var(--space-xs);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.login-box .error {
+    margin: 0;
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.38);
+    color: #fecaca;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: rgba(15, 23, 42, 0.72);
+    color: var(--text);
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.login-box input::placeholder {
+    color: var(--text-dim);
+}
+
+.login-box input:focus {
+    border-color: rgba(59, 130, 246, 0.55);
+    box-shadow: var(--ring-focus);
+    background: rgba(15, 23, 42, 0.92);
+}
+
+.login-box button[type="submit"] {
+    margin-top: var(--space-xs);
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 50%, #1d4ed8 100%);
+    box-shadow: 0 8px 28px rgba(37, 99, 235, 0.4);
+    transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+}
+
+.login-box button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(37, 99, 235, 0.48);
+    filter: brightness(1.03);
+}
+
+@media (max-width: 480px) {
+    .login-box {
+        padding: var(--space-md) var(--space-lg);
+    }   
+}

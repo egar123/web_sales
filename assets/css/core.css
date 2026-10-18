@@ -1,0 +1,208 @@
+/* =============================================================================
+   Sales Egar — inti: token, reset, scrollbar, utilitas, tombol umum
+   ============================================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+    --font: "Poppins", system-ui, sans-serif;
+    --bg-deep: #0b1220;
+    --bg-page: #0f172a;
+    --bg-elevated: #151f32;
+    --bg-card: #1a2332;
+    --bg-card-strong: #1e293b;
+    --sidebar-bg: linear-gradient(180deg, #0f172a 0%, #111827 55%, #0c1222 100%);
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-soft: rgba(255, 255, 255, 0.1);
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --accent: #3b82f6;
+    --accent-strong: #2563eb;
+    --accent-glow: rgba(59, 130, 246, 0.35);
+    --success: #22c55e;
+    --success-strong: #16a34a;
+    --danger: #ef4444;
+    --danger-strong: #dc2626;
+    --purple: #8b5cf6;
+    --purple-deep: #6d28d9;
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+    --radius-2xl: 28px;
+    --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.45);
+    --sidebar-w: 272px;
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: 0.22s var(--ease);
+    --space-xs: 8px;
+    --space-sm: 14px;
+    --space-md: 20px;
+    --space-lg: 28px;
+    --space-xl: 40px;
+    --ring-focus: 0 0 0 3px var(--accent-glow);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text);
+    background: var(--bg-page);
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+::selection {
+    background: rgba(59, 130, 246, 0.35);
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+.text-muted {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.section-gap {
+    margin-top: var(--space-xl);
+}
+
+.table-box + .table-box {
+    margin-top: var(--space-xl);
+}
+
+.search-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 200px;
+    padding: 13px 16px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--bg-deep);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.search-box input:focus {
+    border-color: rgba(59, 130, 246, 0.45);
+    box-shadow: var(--ring-focus);
+}
+
+.search-box button {
+    padding: 13px 22px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    color: #fff;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.search-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+.error {
+    background: rgba(239, 68, 68, 0.15);
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #fecaca;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-bottom: var(--space-md);
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    background: rgba(100, 116, 139, 0.35);
+    border: 1px solid var(--border-subtle);
+    color: #e2e8f0;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: background var(--transition), transform var(--transition), border-color var(--transition);
+}
+
+.btn-back:hover {
+    background: rgba(100, 116, 139, 0.5);
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    text-decoration: none;
+    display: inline-block;
+    background: linear-gradient(135deg, var(--danger), var(--danger-strong));
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(220, 38, 38, 0.35);
+}
